@@ -2,13 +2,14 @@
 
 This repository contains the code and models used in the paper "Understanding European Heatwaves with Variational Autoencoders" submitted to Earth System Dynamics. The project applies variational autoencoders (VAEs) to understand and characterize European heatwave patterns.
 
-> Paçal, A., Hassler, B., Weigel, K., Fernández-Torres, M.-Á., Camps-Valls, G., & Eyring, V. (2025). Understanding European Heatwaves with Variational Autoencoders, *Earth System Dynamics*.
+> Paçal, A., Hassler, B., Weigel, K., Fernández-Torres, M.-Á., Camps-Valls, G., & Eyring, V. (2025). Understanding European Heatwaves with Variational Autoencoders, *Earth System Dynamics*. (Submitted)
 
 ```bibtex
 @article{Pacal2025,
   title = {Understanding European Heatwaves with Variational Autoencoders},
   author = {Paçal, Aytaç and Hassler, Birgit and Weigel, Katja and Fernández-Torres, Miguel-Ángel and Camps-Valls, Gustau and Eyring, Veronika},
   journal = {Earth System Dynamics},
+  note = {Submitted},
   year = {2025},
 }
 ```
