@@ -1,26 +1,16 @@
 # Understanding European Heatwaves with Variational Autoencoders
 
-This repository contains the code and models used in the paper "Understanding European Heatwaves with Variational Autoencoders" submitted to Earth System Dynamics. The project applies variational autoencoders (VAEs) to understand and characterize European heatwave patterns.
+This repository contains the code and models used in the paper "Understanding European Heatwaves with Variational Autoencoders" submitted to Earth System Dynamics. 
 
 > Paçal, A., Hassler, B., Weigel, K., Fernández-Torres, M.-Á., Camps-Valls, G., & Eyring, V. (2025). Understanding European Heatwaves with Variational Autoencoders, *Earth System Dynamics*. (Submitted)
 
-```bibtex
-@article{Pacal2025,
-  title = {Understanding European Heatwaves with Variational Autoencoders},
-  author = {Paçal, Aytaç and Hassler, Birgit and Weigel, Katja and Fernández-Torres, Miguel-Ángel and Camps-Valls, Gustau and Eyring, Veronika},
-  journal = {Earth System Dynamics},
-  note = {Submitted},
-  year = {2025},
-}
-```
-
 **Corresponding Author**: Aytaç Paçal ([aytac.pacal@dlr.de](mailto:aytac.pacal@dlr.de))
 
-[![DOI](https://zenodo.org/badge/DOI/zenodo.X.X.X.svg)](https://doi.org/zenodo.X.X.X)
+<!-- [![DOI](https://zenodo.org/badge/DOI/zenodo.X.X.X.svg)](https://doi.org/zenodo.X.X.X) -->
 
-## Project Description
+## Description
 
-This project applies variational autoencoders (VAEs) to analyze and understand European heatwave patterns. We use a 3D convolutional VAE architecture to capture both spatial and temporal features of heatwave events. The model is trained on heatwave samples extracted form ERA5 reanalysis data, which are avaiable on the [Copernicus Climate Data Store (CDS)](https://cds.climate.copernicus.eu/datasets). We used the ERA5 reanalysis data from DKRZ (Deutscher Wetterdienst) data pool. The data is provided in GRIB format and can be converted to NetCDF using the `grib_file_converter_cdo.py` script.
+This study applies variational autoencoders (VAEs) to analyze and understand European heatwave patterns. We use a 3D convolutional VAE architecture to capture both spatial and temporal features of heatwave events. The model is trained on heatwave samples extracted form ERA5 reanalysis data, which are avaiable on the [Copernicus Climate Data Store (CDS)](https://cds.climate.copernicus.eu/datasets). We used the ERA5 reanalysis data from DKRZ (Deutscher Wetterdienst) data pool. The data is provided in GRIB format and can be converted to NetCDF using the `grib_file_converter_cdo.py` script.
 
 The VAE enables dimensionality reduction and feature extraction from complex meteorological data, allowing for the identification of key patterns and drivers behind European heatwave events. This approach provides new insights into the complex dynamics of extreme temperature events in Europe and their potential changes under climate change.
 
@@ -42,18 +32,18 @@ python main.py --config main.yaml
 ├── val.py                 # Validation script
 ├── test.py                # Testing and plotting script
 ├── data/                  # Directory containing input data
-│   └── unique_hot_grid_clusters.csv  # Heatwave cluster data
-├── models/                # Model architecture definitions
-│   └── VAEConv3D.py       # 3D Convolutional VAE implementation
+│   └── unique_hot_grid_clusters.csv  
+├── models/                
+│   └── VAEConv3D.py       # 3D Convolutional VAE 
 ├── saved_models/          # Trained model weights
-├── scripts/               # Utility scripts for data preparation
+├── scripts/               
 │   ├── deaseasonalize.py  # Script to remove seasonal patterns from data
 │   ├── era5_stream.py     # Script to calculate streamfunction from ERA5 data
 │   ├── era5_t2m_hot_grid_points.py  # Script to identify hot grid points
-│   ├── grib_file_converter_cdo.py   # GRIB file conversion utility
+│   ├── grib_file_converter_cdo.py   # Script to convert GRIB files
 │   └── grib_file_converter_cdo.yaml # Configuration for GRIB conversion
-└── utils/                 # Utility functions
-    ├── misc.py            # Miscellaneous helper functions
+└── utils/                 
+    ├── misc.py            # Helper functions
     └── data_loaders/      # Data loading utilities
         ├── load_data_from_nc.py      # NetCDF data loader
         ├── load_data_from_npy.py     # NumPy data loader
