@@ -1,0 +1,94 @@
+data:
+  start_year: 1940
+  end_year: 2022
+  climatology_start: 1941
+  climatology_end: 1980
+
+force_create_joblist: True  
+joblist_filename: "joblist_test_cdo_{}_{}.csv"
+force_create_metadata: True
+metadata_filename: "era5_metadata.csv"
+
+number_jobs: 100
+
+ERA5_LSM_NA: "/work/bd1083/b309178/HW_detection_VAE/data/era5_hw_vae/lsm/era5_lsm_NA"
+
+OUTPUT_PATH: /work/bd1083/b309178/HW_detection_VAE/data/hourly_era5_NA/
+
+ERA_ID: "E5"     
+
+VARIABLE_ID: 
+  msl:
+    dataType: "an"
+    frequency: "hourly"
+    level_type: "surface"
+    long_name: "Mean sea level pressure"
+    short_name: "msl"
+    stepType: "instant"
+    cdo_method: "daymean"
+  # z:
+  #   dataType: "an"
+  #   frequency: "hourly"
+  #   level_type: "pressure_level"
+  #   level_height: 50000
+  #   long_name: "Geopotential"
+  #   short_name: "z"
+  #   stepType: "instant"
+  #   cdo_method: "daymean"
+  # r: 
+  #   dataType: "an"
+  #   frequency: "hourly"
+  #   level_type: "pressure_level"
+  #   level_height: 50000
+  #   long_name: "Relative humidity"
+  #   short_name: "r"
+  #   stepType: "instant"
+  #   cdo_method: "daymean"
+  # sp: 
+  #   dataType: "an"
+  #   frequency: "hourly"
+  #   level_type: "surface"
+  #   long_name: "Surface pressure"
+  #   short_name: "sp"
+  #   stepType: "instant"
+  #   cdo_method: "daymean"
+  # ssr: 
+  #   dataType: "fc"
+  #   frequency: "hourly"
+  #   level_type: "surface"
+  #   long_name: "Surface net solar radiation"
+  #   short_name: "ssr"
+  #   stepType: "accum"
+  #   cdo_method: "daysum"
+  # t2m: 
+  #   dataType: "an"
+  #   frequency: "hourly"
+  #   level_type: "surface"
+  #   long_name: "2 metre temperature"
+  #   short_name: "t2m"
+  #   stepType: "instant"
+  #   cdo_method: "daymax"
+  # tcc: 
+  #   dataType: "an"
+  #   frequency: "hourly"
+  #   level_type: "surface"
+  #   long_name: "Total cloud cover"
+  #   short_name: "tcc"
+  #   stepType: "instant"
+  #   cdo_method: "daymean"
+  # u10: 
+  #   dataType: "an"
+  #   frequency: "hourly"
+  #   level_type: "surface"
+  #   long_name: "10 metre U wind component"
+  #   short_name: "u10"
+  #   stepType: "instant"
+  #   cdo_method: "daymean"
+  # v10: 
+  #   dataType: "an"
+  #   frequency: "hourly"
+  #   level_type: "surface"
+  #   long_name: "10 metre V wind component"
+  #   short_name: "v10"
+  #   stepType: "instant"
+  #   cdo_method: "daymean"

@@ -1,0 +1,107 @@
+device: "cuda"
+
+mode: "test"
+
+# model configuration
+model:
+  name: "VAEConv3D"
+  hidden_dim: 256
+  latent_dim: 128 
+  kernel_size: 3
+  stride: 1
+  padding: 1
+  apply_sigmoid: False
+
+# optimizer configuration
+optimizer:
+  type: Adam
+  learning_rate: 0.001
+
+# scheduler configuration
+scheduler: 
+  use_scheduler: False
+  type: StepLR
+  params:
+    step_size: 50
+    gamma: 0.1
+
+
+# train configuration
+batch_size: 32
+train:
+  num_epochs: 100
+  save_checkpoint: True
+  load_checkpoint: False
+  checkpoint_dir: "./saved_models/"
+
+# val configuration
+val:
+  load_model: "last" # "last" or date of the model "YYYYMMDD-HHMMSS"
+
+# test configuration
+test:
+  checkpoint_dir: "./saved_models/" 
+  load_model: "250407_020139" # stream, msl, t2m, r, u10, v10, tcc, ssr, z
+
+# data configuration
+data:
+  train_years:
+    - 1941
+    - 1990
+  val_years:
+    - 1991
+    - 2000
+  test_years:
+    - 2001
+    - 2022
+  variables:
+    - stream
+    - msl    
+    - t2m
+    - r
+    - u10
+    - v10   
+    - tcc
+    - ssr 
+    - z 
+
+  root_dir: "./data/"
+  file_pattern: "{model_name}_{var}_1940-2022_standardized.nc"
+  output_dir: "./results"
+  cluster_info_csv: "./unique_hot_grid_clusters.csv"
+  
+  model_name: "ERA5"
+  file_extension: ".nc"
+  number_jobs: 4
+
+  spatial_size: 128
+  temporal_resolution: 11
+  temporal_method: 'fixed' # fixed or sliding
+  resample_hour : "1D"
+  scaler: "global_minmax" # "StandardScaler" or "MinMaxScaler" or "global_minmax"
+  scaler_params:
+    feature_range: [0,1] # set if scaler is "MinMaxScaler"
+
+  resample_method:
+    t2m: "max"
+    d2m: "max"
+    q: "mean"
+    r: "mean"
+    sp: "mean"   
+    tcc: "mean"    
+    u10: "mean"
+    v10: "mean"
+    ssr: "sum"
+    tp: "sum"
+
+logger:
+  name: "VAE_main"
+  file: "VAE_main_{}.log"
+
+param_grid: {
+        "optimizer.learning_rate": [0.0001, 0.001, 0.01],
+        "model.hidden_dim": [64, 128, 256],
+        "model.latent_dim": [64, 128, 256],
+        "batch_size": [8, 16, 32, 64]
+    }
+search_patience: 4
