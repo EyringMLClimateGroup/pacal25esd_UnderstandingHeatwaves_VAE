@@ -2,7 +2,7 @@
 
 This repository contains the code and models used in the paper "Understanding European Heatwaves with Variational Autoencoders" submitted to Earth System Dynamics. 
 
-> Paçal, A., Hassler, B., Weigel, K., Fernández-Torres, M.-Á., Camps-Valls, G., & Eyring, V. (2025). Understanding European Heatwaves with Variational Autoencoders, *Earth System Dynamics*. (Submitted)
+> Paçal, A., Hassler, B., Weigel, K., Fernández-Torres, M.-Á., Camps-Valls, G., and Eyring, V.: Understanding European Heatwaves with Variational Autoencoders, EGUsphere [preprint], https://doi.org/10.5194/egusphere-2025-2460, 2025.
 
 **Corresponding Author**: Aytaç Paçal ([aytac.pacal@dlr.de](mailto:aytac.pacal@dlr.de))
 
