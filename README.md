@@ -6,7 +6,7 @@ This repository contains the code and models used in the paper "Understanding Eu
 
 **Corresponding Author**: Aytaç Paçal ([aytac.pacal@dlr.de](mailto:aytac.pacal@dlr.de))
 
-<!-- [![DOI](https://zenodo.org/badge/DOI/zenodo.X.X.X.svg)](https://doi.org/zenodo.X.X.X) -->
+[![DOI](https://zenodo.org/badge/988595234.svg)](https://doi.org/10.5281/zenodo.15828268)
 
 ## Description
 
